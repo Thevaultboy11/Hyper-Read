@@ -1,0 +1,26 @@
+version: '3'
+
+networks:
+  driver-csillia-application:
+    driver: bridge
+
+services:
+  csillia-api:
+    container_name: csillia-api
+    image: csillia-api
+    build: packages/csillia-api/.
+    ports:
+      - '6081:8080'
+    restart: unless-stopped
+    networks:
+      - driver-csillia-application
+
+  csillia-app:
+    container_name: csillia-app
+    image: csillia-app
+    build: packages/csillia-app/.
+    ports:
+      - '6080:3000'
+    restart: unless-stopped
+    networks:
+      - driver-csillia-application      

@@ -1,0 +1,427 @@
+// Import Tailwind CSS utilities, components, and base styles
+@use 'tailwindcss/base' as *;
+@use 'tailwindcss/components' as *;
+@use 'tailwindcss/utilities' as *;
+
+// // Import custom variables and breakpoints
+@use './utilities/variables.scss' as *; // Assuming _variables.scss contains font size and color variables
+$font-size-h1: 35px;
+$font-size-h2: 30px;
+$font-size-h3: 27.65px;
+$font-size-h4: 23.04px;
+$font-size-h5: 19.2px;
+$font-size-p1: 16px;
+$font-size-p2: 13.3px;
+$font-size-p3: 11.1px;
+// Global styles and custom CSS
+html, body {
+  margin: 0;
+  background-color: #ededed;
+  font-family: "Poppins", sans-serif;
+}
+
+// Links
+a {
+  color: inherit;
+  text-decoration: none;
+  font-family: "Gothic A1", sans-serif;
+}
+
+// Paragraphs
+p {
+  font-size: $font-size-p1;
+  font-weight: 400;
+  font-family: "Gothic A1", sans-serif;
+}
+
+// Headings
+h1 {
+  font-size: $font-size-h4;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: $font-size-h5;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: $font-size-h3;
+}
+
+h4 {
+  font-size: $font-size-h4;
+}
+
+h5 {
+  font-size: $font-size-h5;
+}
+
+// Custom animations
+@keyframes wave {
+  0% { transform: translate(0, -5px); }
+  50% { transform: translate(0, 5px); }
+  100% { transform: translate(0, 0); }
+}
+
+.animate-wave {
+  animation: wave 1s ease-in-out infinite alternate;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes floating {
+  0% { transform: translate(0, 0px); }
+  50% { transform: translate(0, 8px); }
+  100% { transform: translate(0, 0px); }
+}
+
+@keyframes floating-4 {
+  0% { transform: translate(0, 0px); }
+  50% { transform: translate(0, 8px); }
+  100% { transform: translate(0, 0px); }
+}
+
+// Buttons
+.primary_btn {
+  @apply rounded-lg bg-primary200 text-main transition-colors hover:bg-primary200;
+}
+
+.secondary_btn {
+  @apply rounded-lg bg-amber-400 text-black transition-colors hover:bg-amber-500;
+}
+
+.gray_btn {
+  @apply rounded-lg bg-gray-200 text-black transition-colors hover:bg-gray-300;
+}
+
+.danger_btn {
+  background-color: #dc3545;
+  @apply rounded-lg text-white transition-colors hover:bg-gray-300 px-2 py-2;
+}
+
+// Modal and slider styles
+.modal-open {
+  overflow: hidden;
+}
+
+.slide {
+  @apply inline-block w-full;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 14px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  width: 10px;
+  background-color: #fafafa;
+  padding: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+  border-radius: 20px;
+  width: 3px !important;
+}
+
+.custom-file {
+  & > button {
+    display: none;
+  }
+}
+
+// Container and grid system
+.container {
+  @apply mx-auto w-full max-w-6xl min-h-screen p-8;
+}
+
+.row {
+  @apply grid grid-cols-12 gap-4;
+}
+
+.col-1 { @apply col-span-1; }
+.col-2 { @apply col-span-2; }
+.col-3 { @apply col-span-3; }
+.col-4 { @apply col-span-4; }
+.col-5 { @apply col-span-5; }
+.col-6 { @apply col-span-6; }
+.col-7 { @apply col-span-7; }
+.col-8 { @apply col-span-8; }
+.col-9 { @apply col-span-9; }
+.col-10 { @apply col-span-10; }
+.col-11 { @apply col-span-11; }
+.col-12 { @apply col-span-12; }
+
+.circle-sm {
+  @apply flex h-3 w-3 items-center justify-center rounded-full;
+}
+
+.circle {
+  @apply flex h-12 w-12 items-center justify-center rounded-full;
+}
+
+// Floating button animations
+.floating {
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.floating-4 {
+  animation-name: floating-4;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+// Button with white background
+.btn-white {
+  background-color: #fff;
+  color: #0f4466;
+  transition: background-color 0.3s ease;
+}
+
+.btn-white:hover {
+  background-color: #0f4466;
+  color: #fff;
+}
+
+// Button with blue background
+.btn-blue {
+  background-color: #049dd9;
+  color: #fff;
+  border: 1px solid #fff;
+  transition: background-color 0.3s ease;
+}
+
+.btn-blue:hover {
+  background-color: #0f4466;
+  color: #fff;
+  border: 1px solid #0f4466;
+}
+
+// Overflow hidden class
+.overflow-y-hidden {
+  overflow-y: hidden;
+}
+
+// Login page style
+.login-page {
+  min-width: max-content;
+  max-width: 700px;
+  min-height: min-content;
+  max-height: 600px;
+  background-color: #0f4466;
+  padding: 20px;
+  z-index: 50;
+}
+
+// Accordion container for Tailwind
+.accordion-container .accordion-summary {
+  z-index: -1;
+}
+
+// Buttons with different sizes
+.xsm {
+  font-size: $font-size-p2;
+  @apply px-4;
+}
+
+.sm {
+  @apply px-4 py-1;
+}
+
+.md {
+  @apply p-2;
+}
+
+.lg {
+  @apply p-3;
+}
+
+// Typography for headings and paragraphs
+.h1 {
+  font-size: $font-size-h1;
+}
+
+.h2 {
+  font-size: $font-size-h2;
+}
+
+.h3 {
+  font-size: $font-size-h3;
+}
+
+.h4 {
+  font-size: $font-size-h4;
+}
+
+.h5 {
+  font-size: $font-size-h5;
+}
+
+.p1 {
+  font-size: $font-size-p1;
+}
+
+.p2 {
+  font-size: $font-size-p2;
+}
+
+.p3 {
+  font-size: $font-size-p3;
+}
+
+// Custom scroll slider
+.custom-scrollbar::-webkit-scrollbar {
+  width: 14px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: #fafafa;
+  width: 10px;
+  padding: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+  border-radius: 20px;
+  width: 3px !important;
+}
+
+// File input custom styles
+.custom-file {
+  & > button {
+    display: none;
+  }
+}
+
+// Card styling
+.card {
+  @apply rounded-md border-2 border-gray-300 bg-white p-0;
+}
+
+.txt_body {
+  @apply font-sans text-base text-gray-400;
+}
+
+// React Audio Player styles
+ 
+//spinner animation
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.react-wavify {
+  border: 2px solid white;
+}
+.spinner {
+  animation: spin 1s linear infinite;
+  border-bottom-color: transparent !important;
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+  border-top-color: currentColor !important;
+  border-width: 2px !important;
+}
+.react-audio-player {
+  & > input {
+    background-color: aqua !important;
+  }
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #0f4466;
+  transition: background-color 0.3s ease;
+}
+.btn-white:hover {
+  background-color: #0f4466;
+  color: #fff;
+}
+.btn-blue {
+  background-color: #049dd9;
+  color: #fff;
+  border: 1px solid #fff;
+  transition: background-color 0.3s ease;
+}
+.btn-blue:hover {
+  background-color: #0f4466;
+  color: #fff;
+  border: 1px solid #0f4466;
+}
+.overflow-y-hidden {
+  overflow-y: hidden;
+}
+.floating {
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 8px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
+}
+.floating-4 {
+  animation-name: floating;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes floating-4 {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 8px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
+}
+
+//custom scrolll Slider
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 14px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  width: 10px;
+  background-color: #fafafa;
+  padding: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+  border-radius: 20px;
+  width: 3px !important;
+}
+.custom-file {
+  & > button {
+    display: none;
+  }
+}
+
+.slide {
+  display: inline-block;
+  height: 200px;
+  width: 100%;
+  border-radius: 40px;
+}

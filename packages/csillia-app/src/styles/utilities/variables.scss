@@ -1,0 +1,48 @@
+// breakpoints
+$bp_medium: 600px;
+$bp_large: 1300px;
+$bp_xlarge: 1526px;
+
+$body_txt: 1.1em;
+$heading_txt: 1.5em;
+$subheading_txt: 1.3em;
+
+$main_font: "Poppins", sans-serif;
+
+$main_color: #1f3ac7;
+$main_black: #000000;
+
+$secondary_color: #f0f0fe;
+$secondary_light: #fbfaff;
+$secondary_bg_main: #836ff4;
+$secondary_txt_cp: rgb(185, 175, 249);
+
+$main_info_lg: #e6f9fd;
+$main_white: #efeeeb;
+$secondary_white: #ffff;
+$white_page: #efefef;
+$main_gray: #838383;
+$secondary_gray: #e0e0e0;
+
+$sucsses_primary: #407266;
+$error_primary: #ff9999;
+$side_bar_width: 250px;
+
+$main_shadow: 0px 20px 50px rgba(220, 224, 249, 0.5);
+@media screen and (max-width: $bp_medium) {
+  $body_txt: 16px;
+  $heading_txt: 21px;
+  $subheading_txt: 18px;
+}
+
+@media screen and (max-width: $bp_large) {
+  $body_txt: 21px;
+  $heading_txt: 40px;
+  $subheading_txt: 35px;
+}
+
+@media screen and (max-width: $bp_xlarge) {
+  $body_txt: 23px;
+  $heading_txt: 60px;
+  $subheading_txt: 35px;
+}

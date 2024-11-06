@@ -1,0 +1,33 @@
+@use './breakpoints' as *; // Assuming breakpoints are defined in a separate file
+
+$poppins: "Poppins", sans-serif;
+
+$heading1: 36.62px;
+$heading2: 29.3px;
+$heading3: 23.44px;
+
+$subtitle1: 18px;
+$subtitle2: 15px;
+
+$body1: 12px;
+$body2: 9.6px;
+
+$Mbheading1: 33px;
+$Mbheading2: 24px;
+$Mbheading3: 19.53px;
+
+$Mbsubtitle1: 15.63px;
+$Mbsubtitle2: 12.5px;
+
+$Mbbody1: 10px;
+$Mbbody2: 8px;
+
+@media screen and (min-width: $bp_large) {
+  $body2: $body1;
+  $body1: $subtitle2;
+  $subtitle2: $subtitle1;
+  $subtitle1: $heading3;
+  $heading3: $heading2;
+  $heading2: $heading1;
+  $heading1: 42px;
+}

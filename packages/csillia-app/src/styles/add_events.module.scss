@@ -1,0 +1,142 @@
+@use './utilities/variables' as *;
+
+.add_events_component {
+  position: absolute;
+  left: $side_bar_width;
+  width: calc(100% - $side_bar_width);
+  height: 100vh;
+  background-color: $white_page;
+
+  .add_event_form {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+
+    .form_cont {
+      display: grid;
+      max-height: fit-content;
+      width: 90%;
+      row-gap: 10px;
+      justify-self: center;
+      column-gap: 20px;
+      border-radius: 10px;
+      background-color: $secondary_white;
+      position: relative;
+      border: 1px solid #c8c8c8;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+      .add_component_title {
+        // You can add styles here if needed.
+      }
+
+      .add_event_cont {
+        padding-left: 20px;
+        column-gap: 15px;
+
+        .form_title {
+          font-size: calc($subheading_txt - 5px);
+        }
+
+        .add_event_date,
+        .add_event_time {
+          // You can add any specific styles for these elements if needed.
+        }
+      }
+
+      .add_events_more {
+        padding-left: 20px;
+        display: grid;
+        column-gap: 20px;
+        row-gap: 10px;
+
+        .add_form_title {
+          font-size: calc($subheading_txt - 5px);
+        }
+
+        .add_event_title,
+        .add_event_location,
+        .add_event_description {
+          // Add styles as necessary
+        }
+
+        .add_event_description {
+          height: 100px !important;
+          overflow-y: scroll;
+          resize: none;
+        }
+      }
+
+      .date_and_time_cont {
+        padding-left: 20px;
+
+        .date_and_time_sub {
+          font-size: calc($subheading_txt - 5px);
+        }
+      }
+
+      .button_cont {
+        display: flex;
+        column-gap: 15px;
+        padding: 10px;
+        padding-right: 20px;
+        justify-content: flex-end;
+        align-items: center;
+
+        .add_event_button {
+          max-width: fit-content;
+          height: auto;
+          background-color: $secondary_bg_main;
+        }
+
+        .remove_event_button {
+          background-color: $error_primary;
+        }
+      }
+    }
+  }
+
+  .add_events_holiday {
+    height: 30vh;
+    width: 100%;
+    background-color: $secondary_txt_cp;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .add_events_holiday_cont {
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+
+      .add_events_holiday_title {
+        color: $secondary_white;
+        font-family: $main_font;
+      }
+
+      .add_events_holiday_subTitle {
+        font-family: $main_font;
+        font-style: italic;
+        color: $secondary_gray;
+        border-bottom: 1px solid $secondary_gray;
+        transition: color, border-bottom 1s ease-in-out;
+
+        &:hover {
+          cursor: pointer;
+          color: black;
+          border-bottom: 1px solid black;
+        }
+      }
+    }
+
+    .add_events_holiday_icon {
+      font-size: 10em;
+    }
+  }
+}
+
+.gray_line_header,
+.gray_line_footer {
+  height: 1px;
+  background-color: $main_gray;
+}
